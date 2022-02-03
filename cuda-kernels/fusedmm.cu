@@ -31,7 +31,6 @@
    #define VALUETYPE double
 #else
    #define VALUETYPE float
-   #define INDEXTYPE long
 #endif
 
 /*

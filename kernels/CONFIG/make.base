@@ -367,9 +367,13 @@ $(BIN)/x$(pre)@(fmm)time_@(kn)@(pt): $(BIN)/$(pre)FusedMMtime_@(kn)@(pt).o \
 acc : $(BIN)/x$(pre)FusedMMtimeCU_sigmoid 
 	$(BIN)/x$(pre)FusedMMtimeCU_sigmoid -input dataset/harvard.mtx -T 1 -K $(d)  
 
+ifndef CUDA_HOME
+	$(error CUDA_HOME is undefined)
+endif
+
 AKdir = ./cuda-kernels
 ACC = nvcc
-CUDA_HOME = /usr/local/cuda-11.1
+#CUDA_HOME = /usr/local/cuda-11.1
 #ACCINC = -I$(CUDA_HOME)/include 
 
 ### NOTE: to include debug code 
